@@ -11,8 +11,8 @@ Gym version 0.21.0 has installation problems with MuJoCo version 2.1.0, so versi
     * `mkdir ~/.mujoco && cd ~/.mujoco`
     * `unzip mjpro150_linux.zip ~/.mujoco`
     * `mv mjkey.txt ~/.mujoco`
-    * `nano ~/.bashrc`
-  * Add the following two lines:
+ 
+  * Add the following two lines to `~/.bashrc`:
   ```
     export LD_LIBRARY_PATH=/home/${USER}/.mujoco/mujoco150/bin${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
     export MUJOCO_KEY_PATH=/home/${USER}/.mujoco${MUJOCO_KEY_PATH}
@@ -82,14 +82,16 @@ Gym version 0.21.0 has installation problems with MuJoCo version 2.1.0, so versi
   * Install the following package:
     * `sudo apt install libglew-dev`
   * And add the following line to `~/.bashrc`
-    * `export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so`
+  ```
+  export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so
+  ```
   * Restart terminal:
     * `source ~/.bashrc`
   * And activate enviroment:
     * `conda activate mujoco-gym`
   
 ### 3. Installation of stable-baselines3
-  * Fist install some required packages:
+  * First install some required packages:
     * `sudo apt update && sudo apt install cmake libopenmpi-dev python3-dev zlib1g-dev`
   * Install Pytorch
     * `conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch`
